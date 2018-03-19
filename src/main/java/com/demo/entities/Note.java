@@ -20,7 +20,7 @@ public class Note implements Serializable{
 	private Long numero;
 	
 	@ManyToOne
-	@JoinColumn(name= "idEtudiant")
+	@JoinColumn(name= "nom")
 	private Etudiant etudiant;
 	
 	@OneToMany(mappedBy="note")
