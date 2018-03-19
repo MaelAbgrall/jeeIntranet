@@ -4,7 +4,7 @@
       <img src="http://www.esme.fr/Content/images/design/logo_esme.png" class="img-responsive">
     </div>
     <div class="col-md-4">
-      <h1 class="text-center bg-danger">Intranet étudiant</h1>
+      <h1 class="text-center bg-danger">Intranet administrateur</h1>
     </div>
     <div class="col-md-4">
     </div>
@@ -23,13 +23,13 @@
         <a class="nav-link" href="${pageContext.request.contextPath}/home"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/News"><i class="fas fa-newspaper"></i> News</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/newsadmin"><i class="fas fa-newspaper"></i> Gestion des News</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/EDT"><i class="fas fa-calendar-alt"></i> Emploi du temps</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/adminEDT"><i class="fas fa-calendar-alt"></i> Planification des cours</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/notes"><i class="fas fa-flag-checkered"></i> Notes</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/account"><i class="fas fa-users"></i> Gestion des comptes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/contact"><i class="fas fa-address-book"></i> Contact</a>

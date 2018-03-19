@@ -4,7 +4,7 @@
       <img src="http://www.esme.fr/Content/images/design/logo_esme.png" class="img-responsive">
     </div>
     <div class="col-md-4">
-      <h1 class="text-center bg-danger">Intranet étudiant</h1>
+      <h1 class="text-center bg-danger">Intranet enseignant</h1>
     </div>
     <div class="col-md-4">
     </div>
@@ -24,12 +24,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/News"><i class="fas fa-newspaper"></i> News</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/EDT"><i class="fas fa-calendar-alt"></i> Emploi du temps</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/notes"><i class="fas fa-flag-checkered"></i> Notes</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/tnotes"><i class="fas fa-flag-checkered"></i> Gestion des notes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/contact"><i class="fas fa-address-book"></i> Contact</a>
