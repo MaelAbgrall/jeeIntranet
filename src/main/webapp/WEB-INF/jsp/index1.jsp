@@ -7,11 +7,12 @@
 		<title>Intranet</title>	
 	</head>
 	<body>		
-		<c:forEach items="${note}" var ="note">
+		<c:forEach items="${etudiant}" var ="etudiant">
 			
-			
-			${note.numero}<br/>
-			
+			${etudiant.nom}<br/>
+			${etudiant.prenom}<br/>
+			${etudiant.email}<br/>
+			${etudiant.password}<br/>
 			
 		</c:forEach>
 		

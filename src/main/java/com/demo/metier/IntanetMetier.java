@@ -18,4 +18,5 @@ public interface IntanetMetier {
 	public List<Enseignant> listEnseignant();
 	public List<Administrateur> listAdministrateur();
 	public List<Note> listNote(String nom);
+	public List<Etudiant> listEtudiantClasse(String nomClasse);
 }

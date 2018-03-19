@@ -31,11 +31,11 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/index1")
-	public String note(Model model)
+	public String Etudiant(Model model)
 	{
 	
-		List<Note> note= intranetMetier.listNote("franck");
-		model.addAttribute("note", note);
+		List<Etudiant> etudiant= intranetMetier.listEtudiantClasse("3CB");
+		model.addAttribute("etudiant", etudiant);
 		
 		return "index1";
 	}

@@ -95,4 +95,13 @@ public class IntranetMetierImplem implements IntanetMetier{
 		
 		return l;
 	}
+	
+	@Override
+	public List<Etudiant> listEtudiantClasse(String nomClasse){
+		
+		List<Etudiant> l =etudiantRep.listEtudiantClasse(nomClasse);
+		
+		
+		return l;
+	}
 }
