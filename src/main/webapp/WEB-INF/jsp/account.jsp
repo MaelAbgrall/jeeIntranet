@@ -4,13 +4,21 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>intranet ESME - Contact</title>
+	<title>intranet ESME - Comptes</title>
 	<%@include file="header.jsp" %>
 </head>
 <body>
 	<%@include file="navbarAdmin.jsp" %>
 		<div class="container">
-		<h1>admlin</h1>
+		<br>
+			<div class="row">
+				<div class="btn-group col-md-12">
+	      			<a href="${pageContext.request.contextPath}/addAccount"><button type="button" class="btn btn-success">Ajouter un compte</button></a>
+	   	  			<a href="${pageContext.request.contextPath}/listAdmin"><button type="button" class="btn btn-primary">Comptes administrateur</button></a>
+	  	  			<a href="${pageContext.request.contextPath}/listStudent"><button type="button" class="btn btn-primary">Comptes étudiant</button></a>
+	  	  			<a href="${pageContext.request.contextPath}/listTeacher"><button type="button" class="btn btn-primary">Comptes enseignant</button></a>
+	 			</div>
+	 		</div>
 		</div>
 </body>
 </html>
