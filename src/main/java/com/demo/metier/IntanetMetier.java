@@ -11,4 +11,5 @@ public interface IntanetMetier {
 	public List<Etudiant> listEtudiants(String nom);
 	public List<Etudiant> listEtudiants1();
 	public List<News> listNews();
+	public List<News> listNewsActif(Boolean checkActif);
 }

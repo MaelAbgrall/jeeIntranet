@@ -89,8 +89,8 @@ public class IntranetApplication implements CommandLineRunner{
 		Horaire h4 = horaireRep.save(new Horaire("08h:30", "vendredi",c4));
 		Horaire h5 = horaireRep.save(new Horaire("16h:00", "jeudi",c2));
 		
-		News n1 = newsRep.save(new News("link_news1","1ere news de l'annee!!", "news",true,"03 juin 2018"));
-		News n2 = newsRep.save(new News("link_news2","2ere news de l'annee!!", "news",false,"03 decembre 2017"));
+		News n1 = newsRep.save(new News("link_news1","1ere news de l'annee!!", "news",true,"05 juin 2018"));
+		News n2 = newsRep.save(new News("link_news2","2ere news de l'annee!!", "news",false,"04 decembre 2017"));
 		
 		Note no1 = noteRep.save(new Note((long)18, etu2));
 		Note no2 = noteRep.save(new Note((long)10, etu1));

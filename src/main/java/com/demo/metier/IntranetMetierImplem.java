@@ -47,5 +47,14 @@ public class IntranetMetierImplem implements IntanetMetier{
 		return l2;
 	}
 	
+	@Override
+	public List<News> listNewsActif(Boolean checkActif){
+		
+		List<News> l3 =newsRep.listNewsActif(checkActif);
+		
+		
+		return l3;
+	}
+	
 
 }

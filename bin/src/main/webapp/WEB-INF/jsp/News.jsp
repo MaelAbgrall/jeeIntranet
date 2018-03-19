@@ -8,7 +8,7 @@
 	</head>
 	<body>		
 		<c:forEach items="${news}" var ="news">
-			${news.checkActif}<br/>
+			 ${news.checkActif}<br/>
 			${news.dateExpiration}<br/>
 			${news.description}<br/>
 			${news.linkImage}<br/>

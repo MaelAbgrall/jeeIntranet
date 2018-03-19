@@ -7,11 +7,11 @@
 		<title>Intranet</title>	
 	</head>
 	<body>		
-		<c:forEach items="${news}" var ="news">
-			${news.checkActif}<br/>
-			${news.dateExpiration}<br/>
-			${news.description}<br/>
-			${news.linkImage}<br/>
+		<c:forEach items="${etudiants}" var ="etudiant">
+			${etudiant.nom}<br/>
+			${etudiant.prenom}<br/>
+			${etudiant.email}<br/>
+			${etudiant.password}<br/>
 			
 		</c:forEach>
 		"bdd de merde!!!!!!!!!!!!!!!!!"
