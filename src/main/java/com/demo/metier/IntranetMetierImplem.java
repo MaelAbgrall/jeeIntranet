@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.demo.dao.AdministrateurRepository;
+import com.demo.dao.EnseignantRepository;
 import com.demo.dao.EtudiantRepository;
 import com.demo.dao.NewsRepository;
+import com.demo.entities.Administrateur;
+import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.News;
 
@@ -20,6 +24,10 @@ public class IntranetMetierImplem implements IntanetMetier{
 	private EtudiantRepository etudiantRep;
 	@Autowired
 	private NewsRepository newsRep;
+	@Autowired
+	private EnseignantRepository enseignantRep;
+	@Autowired
+	private AdministrateurRepository administrateurRep;
 	
 	@Override
 	public List<Etudiant> listEtudiants(String nom){
@@ -33,28 +41,46 @@ public class IntranetMetierImplem implements IntanetMetier{
 	@Override
 	public List<Etudiant> listEtudiants1(){
 			
-	List<Etudiant> l1 =etudiantRep.listEtudiants1();
+	List<Etudiant> l =etudiantRep.listEtudiants1();
 			
 			
-	return l1;
+	return l;
 	}
 	
 	@Override
 	public List<News> listNews(){
 		
-		List<News> l2 =newsRep.listNews();
+		List<News> l =newsRep.listNews();
 		
-		return l2;
+		return l;
 	}
 	
 	@Override
 	public List<News> listNewsActif(Boolean checkActif){
 		
-		List<News> l3 =newsRep.listNewsActif(checkActif);
+		List<News> l =newsRep.listNewsActif(checkActif);
 		
 		
-		return l3;
+		return l;
 	}
 	
+	
+	@Override
+	public List<Enseignant> listEnseignant(){
+		
+		List<Enseignant> l = enseignantRep.listEnseignant();
+		
+		
+		return l;
+	}
+	
+	@Override
+	public List<Administrateur> listAdministrateur(){
+		
+		List<Administrateur> l = administrateurRep.listAdministrateur();
+		
+		
+		return l;
+	}
 
 }

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.demo.entities.Administrateur;
+import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.News;
 import com.demo.metier.IntanetMetier;
@@ -28,11 +30,13 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/index1")
-	public String etudiant1(Model model)
+	public String enseignant(Model model)
 	{
 	
-		List<News> news= intranetMetier.listNewsActif(true);
-		model.addAttribute("news", news);
+		List<Enseignant> enseignant= intranetMetier.listEnseignant();
+		model.addAttribute("enseignant", enseignant);
+		List<Administrateur> administrateur= intranetMetier.listAdministrateur();
+		model.addAttribute("administrateur", administrateur);
 		return "index1";
 	}
 	
@@ -100,7 +104,7 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/studentAccount")
-	public String adminAccount(Model model) {
+	public String studentAccount(Model model) {
 		String msg="account";
 		model.addAttribute(msg);
 		return "studentAccount";
