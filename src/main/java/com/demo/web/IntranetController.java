@@ -31,8 +31,8 @@ public class IntranetController {
 	public String etudiant1(Model model)
 	{
 	
-		List<Etudiant> etudiants= intranetMetier.listEtudiants1();
-		model.addAttribute("etudiants", etudiants);
+		List<News> news= intranetMetier.listNewsActif(true);
+		model.addAttribute("news", news);
 		return "index1";
 	}
 	
