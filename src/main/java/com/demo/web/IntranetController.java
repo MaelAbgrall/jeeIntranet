@@ -36,6 +36,15 @@ public class IntranetController {
 		return "index1";
 	}
 	
+	@RequestMapping("/home")
+	public String home(Model model)
+	{
+	
+		List<News> news= intranetMetier.listNewsActif(true);
+		model.addAttribute("news", news);
+		return "home";
+	}
+	
 	//STUDENT / TEACHER PAGES
 	@RequestMapping("/News")
 	public String news(Model model) {
