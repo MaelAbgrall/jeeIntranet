@@ -95,7 +95,7 @@ public class IntranetApplication implements CommandLineRunner{
 		Note no1 = noteRep.save(new Note((long)18, etu2));
 		Note no2 = noteRep.save(new Note((long)10, etu1));
 		Note no3 = noteRep.save(new Note((long)7, etu4));
-		Note no4 = noteRep.save(new Note((long)14, etu5));
+		Note no4 = noteRep.save(new Note((long)14, etu3));
 		Note no5 = noteRep.save(new Note((long)5, etu3));
 	
 	}

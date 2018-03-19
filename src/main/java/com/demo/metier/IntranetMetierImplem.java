@@ -11,10 +11,12 @@ import com.demo.dao.AdministrateurRepository;
 import com.demo.dao.EnseignantRepository;
 import com.demo.dao.EtudiantRepository;
 import com.demo.dao.NewsRepository;
+import com.demo.dao.NoteRepository;
 import com.demo.entities.Administrateur;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.News;
+import com.demo.entities.Note;
 
 @Service
 @Transactional
@@ -28,6 +30,8 @@ public class IntranetMetierImplem implements IntanetMetier{
 	private EnseignantRepository enseignantRep;
 	@Autowired
 	private AdministrateurRepository administrateurRep;
+	@Autowired
+	private NoteRepository noteRep;
 	
 	@Override
 	public List<Etudiant> listEtudiants(String nom){
@@ -83,4 +87,12 @@ public class IntranetMetierImplem implements IntanetMetier{
 		return l;
 	}
 
+	@Override
+	public List<Note> listNote(String nom){
+		
+		List<Note> l = noteRep.listNote(nom);
+		
+		
+		return l;
+	}
 }

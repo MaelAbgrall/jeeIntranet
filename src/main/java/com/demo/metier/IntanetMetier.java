@@ -6,6 +6,7 @@ import com.demo.entities.Administrateur;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.News;
+import com.demo.entities.Note;
 
 public interface IntanetMetier {
 
@@ -16,4 +17,5 @@ public interface IntanetMetier {
 	public List<News> listNewsActif(Boolean checkActif);
 	public List<Enseignant> listEnseignant();
 	public List<Administrateur> listAdministrateur();
+	public List<Note> listNote(String nom);
 }
