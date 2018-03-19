@@ -10,7 +10,7 @@ import com.demo.entities.Note;
 
 public interface NoteRepository extends JpaRepository<Note, Long>{
 	
-	@Query("SELECT n FROM Note n WHERE nom=:x")
+	@Query("SELECT n FROM Note n WHERE n.etudiant.nom=:x")
 	public List<Note> listNote(@Param("x") String nom);
 
 }
