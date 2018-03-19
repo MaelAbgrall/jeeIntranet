@@ -84,6 +84,27 @@ public class IntranetController {
 		model.addAttribute(msg);
 		return "account";
 	}
+	
+	@RequestMapping("/adminAccount")
+	public String adminAccount(Model model) {
+		String msg="account";
+		model.addAttribute(msg);
+		return "adminAccount";
+	}
+	
+	@RequestMapping("/teacherAccount")
+	public String teacherAccount(Model model) {
+		String msg="account";
+		model.addAttribute(msg);
+		return "teacherAccount";
+	}
+	
+	@RequestMapping("/studentAccount")
+	public String adminAccount(Model model) {
+		String msg="account";
+		model.addAttribute(msg);
+		return "studentAccount";
+	}
 		
 	@RequestMapping("/adminEDT")
 	public String adminEDT(Model model) {
