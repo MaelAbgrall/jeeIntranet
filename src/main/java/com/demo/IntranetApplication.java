@@ -82,11 +82,11 @@ public class IntranetApplication implements CommandLineRunner{
 		Etudiant etu4 = etudiantRep.save(new Etudiant("tranfort", "camille", "camille.tranfort@esme.fr", "camilletranfort", cl2));
 		Etudiant etu5 = etudiantRep.save(new Etudiant("ionia", "francois", "francois.ionia@esme.fr", "francoisionia", cl3));
 	
-		Horaire h1 = horaireRep.save(new Horaire("08h:30", "lundi",c1,cl1));
-		Horaire h2 = horaireRep.save(new Horaire("10h:30", "lundi", c1,cl1));
-		Horaire h3 = horaireRep.save(new Horaire("14h:00", "mercredi",c2,cl3));
-		Horaire h4 = horaireRep.save(new Horaire("10h:30", "vendredi",c4,cl1));
-		Horaire h5 = horaireRep.save(new Horaire("16h:00", "jeudi",c2,cl2));
+		Horaire h1 = horaireRep.save(new Horaire("08h30", "lundi",c1,cl1));
+		Horaire h2 = horaireRep.save(new Horaire("10h30", "lundi", c1,cl1));
+		Horaire h3 = horaireRep.save(new Horaire("14h00", "mercredi",c2,cl3));
+		Horaire h4 = horaireRep.save(new Horaire("10h30", "vendredi",c4,cl1));
+		Horaire h5 = horaireRep.save(new Horaire("16h00", "jeudi",c2,cl2));
 
 		
 		News n1 = newsRep.save(new News("https://s-media-cache-ak0.pinimg.com/originals/08/46/eb/0846eb70a6117a3581f16a86468389b7.jpg","1ere news de l'annee!!", "news",true,"05 juin 2018"));
