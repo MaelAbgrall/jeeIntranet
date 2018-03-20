@@ -22,16 +22,21 @@ public class Horaire implements Serializable{
 	@JoinColumn(name="idCours")
 	private Cours cours;
 	
+	@ManyToOne
+	@JoinColumn(name="idClasse")
+	private Classe classe;
+	
 	public Horaire() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Horaire(String heure, String jour, Cours cours) {
+	public Horaire(String heure, String jour, Cours cours, Classe classe) {
 		super();
 		this.heure = heure;
 		this.jour = jour;
 		this.cours = cours;
+		this.classe = classe;
 	}
 
 	public Long getIdHoraire() {
