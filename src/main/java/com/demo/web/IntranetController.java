@@ -75,8 +75,8 @@ public class IntranetController {
 		
 	@RequestMapping("/notes")
 	public String notes(Model model) {
-		String msg = "notes stud";
-		model.addAttribute(msg);
+		List<Note> listNote = intranetMetier.listNote("colin");
+		model.addAttribute("note", listNote);
 		return "notes";
 	}
 		
@@ -92,8 +92,8 @@ public class IntranetController {
 	//ADMIN PAGES
 	@RequestMapping("/newsadmin")
 	public String newsAdmin(Model model) {
-		String msgAdmin="adminnews";
-		model.addAttribute(msgAdmin);
+		List<News> news= intranetMetier.listNews();
+		model.addAttribute("news", news);
 		return "newsAdmin";
 	}
 	
@@ -131,7 +131,7 @@ public class IntranetController {
 	@RequestMapping("/listStudent")
 	public String Etudiant(Model model) {
 		List<Etudiant> etudiants= intranetMetier.listEtudiants1();
-		model.addAttribute("etudiants", etudiants);
+		model.addAttribute("etudiant", etudiants);
 		return "listStudent";
 	}
 		

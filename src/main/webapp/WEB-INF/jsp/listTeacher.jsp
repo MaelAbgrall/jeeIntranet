@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +13,7 @@
   <table class="table table-hover">
 	    <thead>
 	      <tr>
-	        <th>PrÃ©nom</th>
+	        <th>Prénom</th>
 	        <th>Nom</th>
 	        <th>Email</th>
 	        <th>Editer / Supprimer</th>
@@ -22,12 +21,7 @@
 	    </thead>
 	    <tbody>    
 	    
-	    <c:forEach items="${enseignant}" var ="enseignant">
-+			
-+			<p>plop ${enseignant}</p>
-+			
-+		</c:forEach>
-		<%--
+	    
 		<c:forEach items="${enseignant}" var ="enseignant">
 	      <tr>
 	        <td>${enseignant.prenom}</td>
@@ -38,7 +32,7 @@
 	          <button type="button" class="btn btn-danger">Supprimer</button>
 	        </td>
 	      </tr>
-	     </c:forEach>--%>
+	     </c:forEach>
 	      
 	      
 	    </tbody>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,32 +13,26 @@
   <table class="table table-hover">
 	    <thead>
 	      <tr>
-	        <th>PrÃ©nom</th>
+	        <th>Prénom</th>
 	        <th>Nom</th>
 	        <th>Email</th>
 	        <th>Editer / Supprimer</th>
 	      </tr>
 	    </thead>
 	    <tbody>
+	    <c:forEach items="${administrateur}" var ="administrateur">
 	    
-	    
-	    	<c:forEach items="${administrateur}" var ="administrateur">
-+			
-+			${administrateur.nom}<br/>
-+			${administrateur.prenom}<br/>
-+			${administrateur.email}<br/>
-+			${administrateur.password}<br/>
- 			
+		    <tr>
+		        <td>${administrateur.prenom}</td>
+		        <td>${administrateur.nom}</td>
+		        <td>${administrateur.email}</td>
+		        <td>
+		        	${administrateur.idAdministrateur}<button type="button" class="btn btn-info">Editer</button>
+		          	<button type="button" class="btn btn-danger">Supprimer</button>
+		        </td>
+		      </tr>
+	    	
  		</c:forEach>
-	      <tr>
-	        <td>John</td>
-	        <td>Doe</td>
-	        <td>john@example.com</td>
-	        <td>
-	          <button type="button" class="btn btn-info">Editer</button>
-	          <button type="button" class="btn btn-danger">Supprimer</button>
-	        </td>
-	      </tr>
 	      
 	      
 	    </tbody>
