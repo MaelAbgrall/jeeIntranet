@@ -23,7 +23,14 @@
 	    <tbody>
 	    
 	    
-	    
+	    	<c:forEach items="${administrateur}" var ="administrateur">
++			
++			${administrateur.nom}<br/>
++			${administrateur.prenom}<br/>
++			${administrateur.email}<br/>
++			${administrateur.password}<br/>
+ 			
+ 		</c:forEach>
 	      <tr>
 	        <td>John</td>
 	        <td>Doe</td>

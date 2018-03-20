@@ -11,6 +11,20 @@
 	<%@include file="navbarAdmin.jsp" %>
 		<div class="container">
 			<h2>Liste des étudiants</h2>
+			
+			
+			
+			<c:forEach items="${etudiant}" var ="etudiant">
+			
+			${etudiant.nom}<br/>
+			${etudiant.prenom}<br/>
+			${etudiant.email}<br/>
+			${etudiant.password}<br/>
+			
+		</c:forEach>
+		
+		
+		
   <table class="table table-hover">
 	    <thead>
 	      <tr>

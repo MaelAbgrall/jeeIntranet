@@ -31,13 +31,29 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/index1")
-	public String Etudiant(Model model)
+	public String Etiant(Model model)
 	{
 	
 		List<Etudiant> etudiant= intranetMetier.listEtudiantClasse("3CB");
 		model.addAttribute("etudiant", etudiant);
 		
 		return "index1";
+	}
+	
+	
+	@RequestMapping("/home")
+	public String home(Model model)
+	{
+	
+		List<News> news= intranetMetier.listNewsActif(true);
+		model.addAttribute("news", news);
+		return "home";
+	}
+	
+	
+	@RequestMapping("/contact")
+	public String contact(Model model){
+		return "contact";
 	}
 	
 	//STUDENT / TEACHER PAGES
@@ -89,25 +105,34 @@ public class IntranetController {
 		return "account";
 	}
 	
-	@RequestMapping("/adminAccount")
-	public String adminAccount(Model model) {
+	
+	@RequestMapping("/addAccount")
+	public String addAccount(Model model) {
 		String msg="account";
 		model.addAttribute(msg);
-		return "adminAccount";
+		return "addAccount";
 	}
 	
-	@RequestMapping("/teacherAccount")
-	public String teacherAccount(Model model) {
-		String msg="account";
-		model.addAttribute(msg);
-		return "teacherAccount";
+	
+	@RequestMapping("/listAdmin")
+	public String Administrateur(Model model) {
+		List<Administrateur> administrateur= intranetMetier.listAdministrateur();
+		model.addAttribute("administrateur", administrateur);
+		return "listAdmin";
 	}
 	
-	@RequestMapping("/studentAccount")
-	public String studentAccount(Model model) {
-		String msg="account";
-		model.addAttribute(msg);
-		return "studentAccount";
+	@RequestMapping("/listTeacher")
+	public String Enseignant(Model model) {
+		List<Enseignant> enseignant= intranetMetier.listEnseignant();
+		model.addAttribute("enseignant", enseignant);
+		return "listTeacher";
+	}
+	
+	@RequestMapping("/listStudent")
+	public String Etudiant(Model model) {
+		List<Etudiant> etudiants= intranetMetier.listEtudiants1();
+		model.addAttribute("etudiants", etudiants);
+		return "listStudent";
 	}
 		
 	@RequestMapping("/adminEDT")

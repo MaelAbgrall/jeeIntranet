@@ -20,19 +20,25 @@
 	        <th>Editer / Supprimer</th>
 	      </tr>
 	    </thead>
-	    <tbody>
+	    <tbody>    
 	    
-	    
-	    
+	    <c:forEach items="${enseignant}" var ="enseignant">
++			
++			<p>plop ${enseignant}</p>
++			
++		</c:forEach>
+		<%--
+		<c:forEach items="${enseignant}" var ="enseignant">
 	      <tr>
-	        <td>John</td>
-	        <td>Doe</td>
-	        <td>john@example.com</td>
-	        <td>
+	        <td>${enseignant.prenom}</td>
+	        <td>${enseignant.nom}</td>
+	        <td>${enseignant.email}</td>
+	        <td>${enseignant.idEnseignant}
 	          <button type="button" class="btn btn-info">Editer</button>
 	          <button type="button" class="btn btn-danger">Supprimer</button>
 	        </td>
 	      </tr>
+	     </c:forEach>--%>
 	      
 	      
 	    </tbody>
