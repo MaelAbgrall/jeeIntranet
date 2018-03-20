@@ -37,7 +37,7 @@ public class Horaire implements Serializable{
 		this.jour = jour;
 		this.cours = cours;
 		this.classe = classe;
-<<<<<<< HEAD
+
 	}
 
 	public Cours getCours() {
@@ -54,8 +54,6 @@ public class Horaire implements Serializable{
 
 	public void setClasse(Classe classe) {
 		this.classe = classe;
-=======
->>>>>>> 7c7a50bbd8f32102765bb2d8303754e9c908d2a8
 	}
 
 	public Long getIdHoraire() {
