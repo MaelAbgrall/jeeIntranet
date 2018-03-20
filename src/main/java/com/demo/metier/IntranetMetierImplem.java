@@ -10,11 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.demo.dao.AdministrateurRepository;
 import com.demo.dao.EnseignantRepository;
 import com.demo.dao.EtudiantRepository;
+import com.demo.dao.HoraireRepository;
 import com.demo.dao.NewsRepository;
 import com.demo.dao.NoteRepository;
 import com.demo.entities.Administrateur;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
+import com.demo.entities.Horaire;
 import com.demo.entities.News;
 import com.demo.entities.Note;
 
@@ -32,6 +34,8 @@ public class IntranetMetierImplem implements IntanetMetier{
 	private AdministrateurRepository administrateurRep;
 	@Autowired
 	private NoteRepository noteRep;
+	@Autowired
+	private HoraireRepository horaireRep;
 	
 	@Override
 	public List<Etudiant> listEtudiants(String nom){
@@ -100,6 +104,15 @@ public class IntranetMetierImplem implements IntanetMetier{
 	public List<Etudiant> listEtudiantClasse(String nomClasse){
 		
 		List<Etudiant> l =etudiantRep.listEtudiantClasse(nomClasse);
+		
+		
+		return l;
+	}
+	
+	@Override
+	public List<Horaire> listHoraire(String nomClasse){
+		
+		List<Horaire> l =horaireRep.listHoraire(nomClasse);
 		
 		
 		return l;

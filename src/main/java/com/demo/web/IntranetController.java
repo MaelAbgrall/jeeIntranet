@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.demo.entities.Administrateur;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
+import com.demo.entities.Horaire;
 import com.demo.entities.News;
 import com.demo.entities.Note;
 import com.demo.metier.IntanetMetier;
@@ -31,14 +32,23 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/index1")
-	public String Etiant(Model model)
+	public String Horaire(Model model)
 	{
 	
-		List<Etudiant> etudiant= intranetMetier.listEtudiantClasse("3CB");
-		model.addAttribute("etudiant", etudiant);
+		List<Horaire> horaire= intranetMetier.listHoraire("3CT");
+		model.addAttribute("horaire", horaire);
 		
 		return "index1";
 	}
+	
+	@RequestMapping("/login")
+	public String login(Model model)
+	{
+	
+		
+		return "login";
+	}
+	
 	
 	
 	@RequestMapping("/home")
