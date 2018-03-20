@@ -78,8 +78,8 @@ public class IntranetController {
 	//STUDENT
 	@RequestMapping("/EDT")
 	public String EDT(Model model) {
-		String msg="edt stud";
-		model.addAttribute(msg);
+		List<Horaire> horaire = intranetMetier.listHoraire("3CT");
+		model.addAttribute("horaire", horaire);
 		return "EDT";
 	}
 		
@@ -147,8 +147,8 @@ public class IntranetController {
 		
 	@RequestMapping("/adminEDT")
 	public String adminEDT(Model model) {
-		String msg="admin EDT";
-		model.addAttribute(msg);
+		List<Horaire> horaire = intranetMetier.listHoraire("3CT");
+		model.addAttribute("horaire", horaire);
 		return "adminEDT";
 	}
 		
