@@ -3,7 +3,11 @@ package com.demo.metier;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -117,4 +121,54 @@ public class IntranetMetierImplem implements IntanetMetier{
 		
 		return l;
 	}
+	
+	@Override
+	public String postLogin(HttpServletRequest request, HttpServletResponse response) {
+		String passwords1 = "";
+
+		String email = request.getParameter("email");
+		String passwords = request.getParameter("password");
+		String profil = request.getParameter("profil");
+		
+		switch (profil) {
+		case "admin":
+			Administrateur a = administrateurRep.findAdministrateur(email);
+			if (a != null) {
+				passwords1 = a.getPassword();
+				if (passwords.equals(passwords1)) {
+				
+					return profil;
+				}
+					
+			
+			}
+			break;
+		
+		case "teacher":
+			Enseignant e = enseignantRep.findEnseignant(email);
+			if (e != null) {
+				
+				passwords1 = e.getPassword();
+				if (passwords.equals(passwords1)) {
+				
+					return profil;
+				}
+			}
+			break;
+			
+		case "etudiant":
+			Etudiant etu = etudiantRep.findEtudiant(email);
+			if (etu != null) {
+				passwords1 = etu.getPassword();
+				
+				if (passwords.equals(passwords1)) {
+				
+					return profil;
+				}
+						
+			}
+			break;
+		}
+		return profil;
+}
 }

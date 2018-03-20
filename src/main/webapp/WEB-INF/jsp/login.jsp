@@ -8,8 +8,9 @@
 	
 </head>
 <body>
-	<form action="/action_page.php">
-  		Email:<br>
+	<form action="/postLogin" method="post">
+	
+		Email:<br>
   		<input type="email" name="email" required><br><br>
   		
   		Mot de passe:<br>

@@ -2,6 +2,9 @@ package com.demo.metier;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.demo.entities.Administrateur;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
@@ -21,4 +24,5 @@ public interface IntanetMetier {
 	public List<Note> listNote(String nom);
 	public List<Etudiant> listEtudiantClasse(String nomClasse);
 	public List<Horaire> listHoraire(String nomClasse);
+	public String postLogin(HttpServletRequest request, HttpServletResponse response);
 }

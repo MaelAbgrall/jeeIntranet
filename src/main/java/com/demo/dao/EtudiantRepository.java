@@ -21,6 +21,9 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, String>{
 	@Query("SELECT e FROM Etudiant e WHERE e.classe.nomClasse=:x")
 	public List<Etudiant> listEtudiantClasse(@Param("x") String nomClasse);
 	
+	@Query("SELECT e FROM Etudiant e WHERE e.email=:x")
+	Etudiant findEtudiant(@Param("x") String email);
+	
 	
 
 }
