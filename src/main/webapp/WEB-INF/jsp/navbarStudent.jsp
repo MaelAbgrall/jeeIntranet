@@ -34,6 +34,9 @@
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/scontact"><i class="fas fa-address-book"></i> Contact</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </li>
     </ul>
   </div>
 </nav>
