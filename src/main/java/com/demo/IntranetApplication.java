@@ -58,6 +58,7 @@ public class IntranetApplication implements CommandLineRunner{
 		
 		Administrateur a1 = adminRep.save(new Administrateur("carre", "jerome", "jerome.carre@esme.fr", "password"));
 		Administrateur a2 = adminRep.save(new Administrateur("dubois", "jean", "jean.dubois@esme.fr", "password2"));
+		Administrateur a3 = adminRep.save(new Administrateur("ddddds", "monsieurjean", "jdubois@esme.fr", "password2"));
 		
 		Classe cl1 = classeRep.save(new Classe("3CT"));
 		Classe cl2 = classeRep.save(new Classe("3CI"));
@@ -77,6 +78,8 @@ public class IntranetApplication implements CommandLineRunner{
 		
 		
 		Etudiant etu1 = etudiantRep.save(new Etudiant("colin", "pierre", "pierre.colin@esme.fr", "pierrecolin", cl1));
+		Etudiant etu7 = etudiantRep.save(new Etudiant("golum", "mapeire", "golum@esme.fr", "pierrecolin", cl1));
+		Etudiant etu6 = etudiantRep.save(new Etudiant("coluuu", "unepierre", "ccolin@esme.fr", "pierrecolin", cl1));
 		Etudiant etu2 = etudiantRep.save(new Etudiant("belmia", "anne", "anne.belmia@esme.fr", "annebelmia", cl1));
 		Etudiant etu3 = etudiantRep.save(new Etudiant("franck", "vincent", "vincent.frank@esme.fr", "vincentfrank", cl3));
 		Etudiant etu4 = etudiantRep.save(new Etudiant("tranfort", "camille", "camille.tranfort@esme.fr", "camilletranfort", cl2));
@@ -91,6 +94,8 @@ public class IntranetApplication implements CommandLineRunner{
 		
 		News n1 = newsRep.save(new News("https://s-media-cache-ak0.pinimg.com/originals/08/46/eb/0846eb70a6117a3581f16a86468389b7.jpg","1ere news de l'annee!!", "news",true,"05 juin 2018"));
 		News n2 = newsRep.save(new News("http://images.midilibre.fr/images/2018/02/05/sur-une-route-de-lozere-ce-lundi-5-fevrier-au-matin_2701665_1000x500.jpg?v=1","2ere news de l'annee!!", "news",false,"04 decembre 2017"));
+		News n3 = newsRep.save(new News("http://images.midilibre.fr/images/2018/02/05/sur-une-route-de-lozere-ce-lundi-5-fevrier-au-matin_2701665_1000x500.jpg?v=1","3e news de l'annee!!", "news",true,"05 decembre 2017"));
+		News n4 = newsRep.save(new News("http://images.midilibre.fr/images/2018/02/05/sur-une-route-de-lozere-ce-lundi-5-fevrier-au-matin_2701665_1000x500.jpg?v=1","4e news de l'annee!!", "news",false,"08 decembre 2017"));
 		
 		Note no1 = noteRep.save(new Note((long)18, etu2));
 		Note no2 = noteRep.save(new Note((long)10, etu1));
