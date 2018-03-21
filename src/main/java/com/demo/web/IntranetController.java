@@ -161,7 +161,7 @@ public class IntranetController {
 		return "adminEDT";
 	}
 	
-	@RequestMapping(value = "/postLogin")
+	@PostMapping(value = "/postLogin")
 	public String postLogin(HttpServletRequest request, HttpServletResponse response, Model model) {
 		 String result = intranetMetier.postLogin(request, response);
 		
@@ -172,16 +172,16 @@ public class IntranetController {
 		String email = request.getParameter("email");
 			
 		switch(profil) {
-		case administrateur:
+		case "administrateur":
 			return "redirect:/listAdmin";
-		case enseignant:
+		case "enseignant":
 			return "redirect:/listTeacher";
-		case etudiant:
+		case "etudiant":
 			return "redirect:/listStudent";
 			
 		}
-		
-		return "postLogin";
+		return "redirect:/login";
+	
 }
 		
 	

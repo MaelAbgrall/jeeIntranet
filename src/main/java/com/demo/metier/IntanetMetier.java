@@ -25,4 +25,5 @@ public interface IntanetMetier {
 	public List<Etudiant> listEtudiantClasse(String nomClasse);
 	public List<Horaire> listHoraire(String nomClasse);
 	public String postLogin(HttpServletRequest request, HttpServletResponse response);
+
 }

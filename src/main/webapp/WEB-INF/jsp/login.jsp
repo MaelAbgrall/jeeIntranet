@@ -16,7 +16,7 @@
   		Mot de passe:<br>
   		<input type="password" name="password" required><br><br>
   		
-  		<select name="profil" form="profil">
+  		<select id= "profil" name="profil">
 	 		<option value="etudiant">Etudiant</option>
 	 		<option value="enseignant">Enseignant</option>
 	  		<option value="administrateur">Administrateur</option>

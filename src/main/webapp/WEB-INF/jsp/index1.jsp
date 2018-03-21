@@ -7,10 +7,10 @@
 		<title>Intranet</title>	
 	</head>
 	<body>		
-		<c:forEach items="${horaire}" var ="horaire">
+		<c:forEach items="${administrateur}" var ="administrateur">
 			
-			${horaire.jour}<br/>
-			${horaire.heure}<br/>
+			${administrateur.nom}<br/>
+			${administrateur.prenom}<br/>
 			
 		</c:forEach>
 		

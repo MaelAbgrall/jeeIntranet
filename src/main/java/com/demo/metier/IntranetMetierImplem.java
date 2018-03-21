@@ -131,20 +131,22 @@ public class IntranetMetierImplem implements IntanetMetier{
 		String profil = request.getParameter("profil");
 		
 		switch (profil) {
-		case "admin":
+		case "administrateur":
 			Administrateur a = administrateurRep.findAdministrateur(email);
 			if (a != null) {
 				passwords1 = a.getPassword();
 				if (passwords.equals(passwords1)) {
 				
 					return profil;
-				}
 					
-			
+				
+					
+			}
+			return profil;
 			}
 			break;
 		
-		case "teacher":
+		case "enseignant":
 			Enseignant e = enseignantRep.findEnseignant(email);
 			if (e != null) {
 				
@@ -153,6 +155,7 @@ public class IntranetMetierImplem implements IntanetMetier{
 				
 					return profil;
 				}
+				return profil;
 			}
 			break;
 			
@@ -165,7 +168,7 @@ public class IntranetMetierImplem implements IntanetMetier{
 				
 					return profil;
 				}
-						
+				return profil;		
 			}
 			break;
 		}
