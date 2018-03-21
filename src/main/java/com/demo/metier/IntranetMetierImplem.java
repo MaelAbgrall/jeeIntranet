@@ -12,12 +12,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.demo.dao.AdministrateurRepository;
+import com.demo.dao.ClasseRepository;
 import com.demo.dao.EnseignantRepository;
 import com.demo.dao.EtudiantRepository;
 import com.demo.dao.HoraireRepository;
 import com.demo.dao.NewsRepository;
 import com.demo.dao.NoteRepository;
 import com.demo.entities.Administrateur;
+import com.demo.entities.Classe;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.Horaire;
@@ -40,6 +42,8 @@ public class IntranetMetierImplem implements IntanetMetier{
 	private NoteRepository noteRep;
 	@Autowired
 	private HoraireRepository horaireRep;
+	@Autowired
+	private ClasseRepository classeRep;
 	
 	@Override
 	public List<Etudiant> listEtudiants(String nom){
@@ -181,4 +185,14 @@ public class IntranetMetierImplem implements IntanetMetier{
 		
 		return e;
 	}
+	
+	@Override
+	public Classe listClasseEtudiant(String nom){
+		
+		Classe l = classeRep.listClasseEtudiant(nom);
+		
+		
+		return l;
+	}
+	
 }

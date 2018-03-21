@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.demo.entities.Administrateur;
+import com.demo.entities.Classe;
 import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.Horaire;
@@ -26,5 +27,6 @@ public interface IntanetMetier {
 	public List<Horaire> listHoraire(String nomClasse);
 	public String postLogin(HttpServletRequest request, HttpServletResponse response);
 	public Etudiant findEtudiant(String email);
+	public Classe listClasseEtudiant(String nom);
 
 }

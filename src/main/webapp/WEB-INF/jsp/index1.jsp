@@ -7,10 +7,9 @@
 		<title>Intranet</title>	
 	</head>
 	<body>		
-		<c:forEach items="${administrateur}" var ="administrateur">
-			
-			${administrateur.nom}<br/>
-			${administrateur.prenom}<br/>
+		<c:forEach items="${classe}" var ="classe">
+		
+			${classe.nomClasse}<br/>
 			
 		</c:forEach>
 		

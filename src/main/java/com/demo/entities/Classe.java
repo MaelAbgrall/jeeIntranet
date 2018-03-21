@@ -6,6 +6,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -19,6 +21,10 @@ public class Classe implements Serializable{
 	
 	@OneToMany(mappedBy="classe")
 	private Collection<Cours> cours;
+	
+	@ManyToOne
+	@JoinColumn(name="nom")
+	private Etudiant etudiant;
 	
 	public Classe() {
 		super();

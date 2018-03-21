@@ -17,6 +17,7 @@ import com.demo.entities.Enseignant;
 import com.demo.entities.Etudiant;
 import com.demo.entities.Horaire;
 import com.demo.entities.News;
+import com.demo.entities.Classe;
 import com.demo.entities.Note;
 import com.demo.metier.IntanetMetier;
 
@@ -45,11 +46,11 @@ public class IntranetController {
 	}
 	
 	@RequestMapping("/index1")
-	public String Horaire(Model model)
+	public String Classe(Model model)
 	{
 	
-		List<Horaire> horaire= intranetMetier.listHoraire("3CT");
-		model.addAttribute("horaire", horaire);
+		Classe classe= intranetMetier.listClasseEtudiant("colin");
+		model.addAttribute("classe", classe);
 		
 		return "index1";
 	}
@@ -88,6 +89,14 @@ public class IntranetController {
 			cookiename.setMaxAge(60 * 60 * 24);
 			cookiename.setPath("/");
 			cookiename.setSecure(false);
+			response.addCookie(cookiename);
+			
+			Classe myclass = stud.getClasse();
+			classe = myclass.getNomClasse();
+			Cookie cookieclasse = new Cookie("classe", classe);
+			cookieclasse.setMaxAge(60 * 60 * 24);
+			cookieclasse.setPath("/");
+			cookieclasse.setSecure(false);
 			response.addCookie(cookiename);
 			return "redirect:/shome";			
 		}
@@ -154,7 +163,8 @@ public class IntranetController {
 	@RequestMapping("/sEDT")
 	public String sEDT(Model model) {
 		if (profil != null && profil.equals("etudiant")) {
-			List<Horaire> horaire = intranetMetier.listHoraire("3CT");
+			
+			List<Horaire> horaire = intranetMetier.listHoraire(classe);
 			model.addAttribute("horaire", horaire);
 			return "sEDT";
 		}
