@@ -2,6 +2,7 @@ package com.demo.web;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,6 +28,9 @@ public class IntranetController {
 	private final String etudiant = "etudiant";
 	
 	private String profil = "";
+	private String email = "";
+	private String classe = "";
+	private String name= "";
 	@Autowired
 	private IntanetMetier intranetMetier;
 	
@@ -62,65 +66,99 @@ public class IntranetController {
 	
 	@RequestMapping("/shome")
 	public String shome(Model model){
-		List<News> news= intranetMetier.listNewsActif(true);
-		model.addAttribute("news", news);
-		return "shome";
+		if (profil.equals("etudiant")) {
+			List<News> news= intranetMetier.listNewsActif(true);
+			model.addAttribute("news", news);
+			return "shome";
+		}
+		return "redirect:/login";
+			
 	}
 	
 	
 	@RequestMapping("/scontact")
 	public String scontact(Model model){
-		return "scontact";
+		if (profil.equals("etudiant")) {
+			return "scontact";
+		}
+		return "redirect:/login";
 	}
 	
 	@RequestMapping("/sNews")
 	public String snews(Model model) {
-		List<News> news= intranetMetier.listNews();
-		model.addAttribute("news", news);
-		return "sNews";
+		if (profil.equals("etudiant")) {
+			List<News> news= intranetMetier.listNews();
+			model.addAttribute("news", news);
+			return "sNews";
+		}
+		return "redirect:/login";
+		
 	}
 		
 		
 	@RequestMapping("/sEDT")
 	public String sEDT(Model model) {
-		List<Horaire> horaire = intranetMetier.listHoraire("3CT");
-		model.addAttribute("horaire", horaire);
-		return "sEDT";
+		if (profil.equals("etudiant")) {
+			List<Horaire> horaire = intranetMetier.listHoraire("3CT");
+			model.addAttribute("horaire", horaire);
+			return "sEDT";
+		}
+		return "redirect:/login";
+			
 	}
 		
 	@RequestMapping("/snotes")
 	public String snotes(Model model) {
-		List<Note> listNote = intranetMetier.listNote("colin");
-		model.addAttribute("note", listNote);
-		return "snotes";
+		if (profil.equals("etudiant")) {
+			List<Note> listNote = intranetMetier.listNote("colin");
+			model.addAttribute("note", listNote);
+			return "snotes";
+		}
+		return "redirect:/login";
+			
 	}
 		
 		
 	//TEACHER PAGE
 	@RequestMapping("/tnotes")
 	public String tNotes(Model model) {
-		List<Etudiant> listEtudiant = intranetMetier.listEtudiantClasse("3CT");
-		model.addAttribute("etudiant", listEtudiant);
-		return "tNotes";
+		if (profil.equals("enseignant")) {
+			List<Etudiant> listEtudiant = intranetMetier.listEtudiantClasse("3CT");
+			model.addAttribute("etudiant", listEtudiant);
+			return "tNotes";
+		}
+		return "redirect:/login";
+		
 	}
 		
 	@RequestMapping("/tNews")
 	public String tnews(Model model) {
-		List<News> news= intranetMetier.listNews();
-		model.addAttribute("news", news);
-		return "tNews";
+		if (profil.equals("enseignant")) {
+			List<News> news= intranetMetier.listNews();
+			model.addAttribute("news", news);
+			return "tNews";
+		}
+		return "redirect:/login";
+			
 	}
 	
 	@RequestMapping("/thome")
 	public String thome(Model model){	
-		List<News> news= intranetMetier.listNewsActif(true);
-		model.addAttribute("news", news);
-		return "thome";
+		if (profil.equals("enseignant")) {
+			List<News> news= intranetMetier.listNewsActif(true);
+			model.addAttribute("news", news);
+			return "thome";
+		}
+		return "redirect:/login";
+		
 	}
 	
 	@RequestMapping("/tcontact")
 	public String tcontact(Model model){
-		return "tcontact";
+		if (profil.equals("enseignant")) {
+			return "tcontact";
+		}
+		return "redirect:/login";
 	}
 	
 	
@@ -129,62 +167,94 @@ public class IntranetController {
 	//ADMIN PAGES
 	@RequestMapping("/anewsadmin")
 	public String anewsAdmin(Model model) {
-		List<News> news= intranetMetier.listNews();
-		model.addAttribute("news", news);
-		return "anewsAdmin";
+		if (profil.equals("administrateur")) {
+			List<News> news= intranetMetier.listNews();
+			model.addAttribute("news", news);
+			return "anewsAdmin";
+		}
+		return "redirect:/login";
+		
 	}
 	
 	
 	@RequestMapping("/account")
 	public String account(Model model) {
-		return "account";
+		if (profil.equals("administrateur")) {
+			return "account";
+		}
+		return "redirect:/login";
 	}
 	
 	
 	@RequestMapping("/addAccount")
 	public String addAccount(Model model) {
-		return "addAccount";
+		if (profil.equals("administrateur")) {
+			return "addAccount";
+		}
+		return "redirect:/login";
 	}
 	
 	
 	@RequestMapping("/alistAdmin")
 	public String Administrateur(HttpServletRequest request,Model model) {
-		List<Administrateur> administrateur= intranetMetier.listAdministrateur();
-		model.addAttribute("administrateur", administrateur);
-		return "alistAdmin";
+		if (profil.equals("administrateur")) {
+			List<Administrateur> administrateur= intranetMetier.listAdministrateur();
+			model.addAttribute("administrateur", administrateur);
+			return "alistAdmin";
+		}
+		return "redirect:/login";
+		
 	}
 	
 	@RequestMapping("/alistTeacher")
 	public String Enseignant(HttpServletRequest request,Model model) {
-		List<Enseignant> enseignant= intranetMetier.listEnseignant();
-		model.addAttribute("enseignant", enseignant);
-		return "alistTeacher";
+		if (profil.equals("administrateur")) {
+			List<Enseignant> enseignant= intranetMetier.listEnseignant();
+			model.addAttribute("enseignant", enseignant);
+			return "alistTeacher";
+		}
+		return "redirect:/login";
+		
 	}
 	
 	@RequestMapping("/alistStudent")
 	public String Etudiant(HttpServletRequest request,Model model) {
-		List<Etudiant> etudiants= intranetMetier.listEtudiants1();
-		model.addAttribute("etudiant", etudiants);
-		return "alistStudent";
+		if (profil.equals("administrateur")) {
+			List<Etudiant> etudiants= intranetMetier.listEtudiants1();
+			model.addAttribute("etudiant", etudiants);
+			return "alistStudent";
+		}
+		return "redirect:/login";
+		
 	}
 		
 	@RequestMapping("/adminEDT")
 	public String adminEDT(Model model) {
-		List<Horaire> horaire = intranetMetier.listHoraire("3CT");
-		model.addAttribute("horaire", horaire);
-		return "adminEDT";
+		if (profil.equals("administrateur")) {
+			List<Horaire> horaire = intranetMetier.listHoraire("3CT");
+			model.addAttribute("horaire", horaire);
+			return "adminEDT";
+		}
+		return "redirect:/login";
 	}
 	
 	@RequestMapping("/admincontact")
 	public String acontact(Model model){
-		return "admincontact";
+		if (profil.equals("administrateur")) {
+			return "admincontact";
+		}
+		return "redirect:/login";
 	}
 	
 	@RequestMapping("/ahome")
 	public String ahome(Model model){
-		List<News> news= intranetMetier.listNewsActif(true);
-		model.addAttribute("news", news);
-		return "ahome";
+		//model.addAttribute("a_userType", userType);
+		if (profil.equals("administrateur")) {
+			List<News> news= intranetMetier.listNewsActif(true);
+			model.addAttribute("news", news);
+			return "ahome";
+		}
+		return "redirect:/login";
 	}
 	
 	
@@ -197,17 +267,23 @@ public class IntranetController {
 	
 		profil = result;
 		
-		model.addAttribute("profil", profil);
 		String email = request.getParameter("email");
-			
+		//Etudiant stud = intranetMetier.findEtudiant(email);
+		
+		Cookie cookieType = new Cookie("userType", profil);
+		cookieType.setMaxAge(60 * 60 * 24);
+		cookieType.setPath("/");
+		cookieType.setSecure(false);
+		response.addCookie(cookieType);
+		model.addAttribute("profil", profil);
+		
 		switch(profil) {
 		case "administrateur":
 			return "redirect:/ahome";
 		case "enseignant":
 			return "redirect:/thome";
 		case "etudiant":
-			return "redirect:/shome";
-			
+			return "redirect:/shome";			
 		}
 		return "redirect:/login";
 	

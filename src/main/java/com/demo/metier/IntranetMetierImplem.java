@@ -174,4 +174,11 @@ public class IntranetMetierImplem implements IntanetMetier{
 		}
 		return profil;
 }
+
+	@Override
+	public Etudiant findEtudiant(String email) {
+		Etudiant e = etudiantRep.findEtudiant(email);
+		
+		return e;
+	}
 }
