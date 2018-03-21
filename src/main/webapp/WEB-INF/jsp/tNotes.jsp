@@ -20,20 +20,13 @@
       </tr>
     </thead>
     <tbody>
-      
+    <c:forEach items="${etudiant}" var ="etudiant">      
       <tr>
-        <td>eleve</td>
+        <td>${etudiant.prenom}, ${etudiant.nom}</td>
         <td>
-        <input type="number" class="form-control" id="usr">noteExistante
-        /20</td>
+        <input type="number" class="form-control" id="usr">/20</td>
       </tr>
-      
-      <tr>
-        <td>eleve</td>
-        <td>
-        <input type="number" class="form-control" id="usr">note0
-        /20</td>
-      </tr>
+      </c:forEach>
       
       
       

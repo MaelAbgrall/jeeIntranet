@@ -20,19 +20,19 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/home"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/shome"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/News"><i class="fas fa-newspaper"></i> News</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/sNews"><i class="fas fa-newspaper"></i> News</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/EDT"><i class="fas fa-calendar-alt"></i> Emploi du temps</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/sEDT"><i class="fas fa-calendar-alt"></i> Emploi du temps</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/notes"><i class="fas fa-flag-checkered"></i> Notes</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/snotes"><i class="fas fa-flag-checkered"></i> Notes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/contact"><i class="fas fa-address-book"></i> Contact</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/scontact"><i class="fas fa-address-book"></i> Contact</a>
       </li>
     </ul>
   </div>

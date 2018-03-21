@@ -60,98 +60,112 @@ public class IntranetController {
 	
 	
 	
-	@RequestMapping("/home")
-	public String home(Model model)
-	{
-	
+	@RequestMapping("/shome")
+	public String shome(Model model){
 		List<News> news= intranetMetier.listNewsActif(true);
 		model.addAttribute("news", news);
-		return "home";
+		return "shome";
 	}
 	
 	
-	@RequestMapping("/contact")
-	public String contact(Model model){
-		return "contact";
+	@RequestMapping("/scontact")
+	public String scontact(Model model){
+		return "scontact";
 	}
 	
-	//STUDENT / TEACHER PAGES
-	@RequestMapping("/News")
-	public String news(Model model) {
+	@RequestMapping("/sNews")
+	public String snews(Model model) {
 		List<News> news= intranetMetier.listNews();
 		model.addAttribute("news", news);
-		return "News";
+		return "sNews";
 	}
 		
 		
-	//STUDENT
-	@RequestMapping("/EDT")
-	public String EDT(Model model) {
+	@RequestMapping("/sEDT")
+	public String sEDT(Model model) {
 		List<Horaire> horaire = intranetMetier.listHoraire("3CT");
 		model.addAttribute("horaire", horaire);
-		return "EDT";
+		return "sEDT";
 	}
 		
-	@RequestMapping("/notes")
-	public String notes(Model model) {
+	@RequestMapping("/snotes")
+	public String snotes(Model model) {
 		List<Note> listNote = intranetMetier.listNote("colin");
 		model.addAttribute("note", listNote);
-		return "notes";
+		return "snotes";
 	}
 		
 		
 	//TEACHER PAGE
 	@RequestMapping("/tnotes")
 	public String tNotes(Model model) {
-		String msg = "notes teach";
-		model.addAttribute(msg);
+		List<Etudiant> listEtudiant = intranetMetier.listEtudiantClasse("3CT");
+		model.addAttribute("etudiant", listEtudiant);
 		return "tNotes";
 	}
 		
-	//ADMIN PAGES
-	@RequestMapping("/newsadmin")
-	public String newsAdmin(Model model) {
+	@RequestMapping("/tNews")
+	public String tnews(Model model) {
 		List<News> news= intranetMetier.listNews();
 		model.addAttribute("news", news);
-		return "newsAdmin";
+		return "tNews";
+	}
+	
+	@RequestMapping("/thome")
+	public String thome(Model model){	
+		List<News> news= intranetMetier.listNewsActif(true);
+		model.addAttribute("news", news);
+		return "thome";
+	}
+	
+	@RequestMapping("/tcontact")
+	public String tcontact(Model model){
+		return "tcontact";
+	}
+	
+	
+	
+	
+	//ADMIN PAGES
+	@RequestMapping("/anewsadmin")
+	public String anewsAdmin(Model model) {
+		List<News> news= intranetMetier.listNews();
+		model.addAttribute("news", news);
+		return "anewsAdmin";
 	}
 	
 	
 	@RequestMapping("/account")
 	public String account(Model model) {
-		String msg="account";
-		model.addAttribute(msg);
 		return "account";
 	}
 	
 	
 	@RequestMapping("/addAccount")
 	public String addAccount(Model model) {
-		String msg="account";
-		model.addAttribute(msg);
 		return "addAccount";
 	}
 	
 	
-	@RequestMapping("/listAdmin")
+	@RequestMapping("/alistAdmin")
 	public String Administrateur(HttpServletRequest request,Model model) {
 		List<Administrateur> administrateur= intranetMetier.listAdministrateur();
 		model.addAttribute("administrateur", administrateur);
-		return "listAdmin";
+		return "alistAdmin";
 	}
 	
-	@RequestMapping("/listTeacher")
+	@RequestMapping("/alistTeacher")
 	public String Enseignant(HttpServletRequest request,Model model) {
 		List<Enseignant> enseignant= intranetMetier.listEnseignant();
 		model.addAttribute("enseignant", enseignant);
-		return "listTeacher";
+		return "alistTeacher";
 	}
 	
-	@RequestMapping("/listStudent")
+	@RequestMapping("/alistStudent")
 	public String Etudiant(HttpServletRequest request,Model model) {
 		List<Etudiant> etudiants= intranetMetier.listEtudiants1();
 		model.addAttribute("etudiant", etudiants);
-		return "listStudent";
+		return "alistStudent";
 	}
 		
 	@RequestMapping("/adminEDT")
@@ -160,6 +174,21 @@ public class IntranetController {
 		model.addAttribute("horaire", horaire);
 		return "adminEDT";
 	}
+	
+	@RequestMapping("/admincontact")
+	public String acontact(Model model){
+		return "admincontact";
+	}
+	
+	@RequestMapping("/ahome")
+	public String ahome(Model model){
+		List<News> news= intranetMetier.listNewsActif(true);
+		model.addAttribute("news", news);
+		return "ahome";
+	}
+	
+	
+	
 	
 	@PostMapping(value = "/postLogin")
 	public String postLogin(HttpServletRequest request, HttpServletResponse response, Model model) {
@@ -173,11 +202,11 @@ public class IntranetController {
 			
 		switch(profil) {
 		case "administrateur":
-			return "redirect:/listAdmin";
+			return "redirect:/ahome";
 		case "enseignant":
-			return "redirect:/listTeacher";
+			return "redirect:/thome";
 		case "etudiant":
-			return "redirect:/listStudent";
+			return "redirect:/shome";
 			
 		}
 		return "redirect:/login";

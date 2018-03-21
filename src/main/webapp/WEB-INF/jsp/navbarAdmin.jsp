@@ -20,10 +20,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/home"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/ahome"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/newsadmin"><i class="fas fa-newspaper"></i> Gestion des News</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/anewsadmin"><i class="fas fa-newspaper"></i> Gestion des News</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/adminEDT"><i class="fas fa-calendar-alt"></i> Planification des cours</a>
@@ -32,7 +32,7 @@
         <a class="nav-link" href="${pageContext.request.contextPath}/account"><i class="fas fa-users"></i> Gestion des comptes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/contact"><i class="fas fa-address-book"></i> Contact</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/admincontact"><i class="fas fa-address-book"></i> Contact</a>
       </li>
     </ul>
   </div>
